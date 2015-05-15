@@ -1,0 +1,20 @@
+<div layout-margin layout="column" layout-align="center" class="md-whiteframe-z1">
+    <div layout="row" layout-align="center">
+        <md-input-container style="width: 30%">
+            <label>Enter the question here.</label>
+            <textarea ng-model="poll.question"></textarea>
+        </md-input-container>
+    </div>
+    <div ng-repeat="option in pollOptions track by $index">
+        <form layout="row" layout-align="center" ng-submit="addOption($index)">
+            <strong layout layout-align="center center">{{$index + 1}}. </strong>
+            <md-input-container style="width: 30%">
+                <label>Enter poll option {{$index + 1}}</label>
+                <input ng-keydown="navigateOptions($event, $index)" ng-model="option.description" id="option{{$index}}"></input>
+            </md-input-container>
+        </form>
+    </div>
+    <div layout="row" layout-align="center center">
+        <md-button ng-click="createPoll()" layout class="md-raised md-primary">Create Poll!</md-button>
+    </div>
+</div>

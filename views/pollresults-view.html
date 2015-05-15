@@ -1,0 +1,8 @@
+<div layout-margin layout="column" layout-align="center" class="md-whiteframe-z1">
+    <h2 layout layout-align="center">{{poll.question}}</h2>
+    <div ng-repeat="option in poll.pollOptions | orderBy: '-votes' track by $index " value="{{$index}}" class="md-primary" layout-align="center center" layout="row">
+        <strong>{{$index + 1}}. </strong>
+        <p style="margin:5px"> {{option.description}}</p>
+        <h2 style="margin:5px">{{option.votes}}</h2>
+    </div>
+</div>

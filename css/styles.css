@@ -1,0 +1,8 @@
+.item-tile {
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.item-tile:hover {
+    background-color: rgba(100, 100, 100, .3);
+}

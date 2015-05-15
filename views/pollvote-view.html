@@ -1,0 +1,12 @@
+<div layout-margin layout="column" layout-align="center" class="md-whiteframe-z1">
+    <h2 layout layout-align="center">{{poll.question}}</h2>
+    <md-radio-group ng-model="poll.answer">
+        <md-radio-button ng-repeat="option in poll.pollOptions track by $index" value="{{$index}}" class="md-primary" layout-align="center" layout>
+            <div layout="row"><strong layout layout-align="center center">{{$index + 1}}. </strong> {{option.description}}</div>
+        </md-radio-button>
+    </md-radio-group>
+    <div layout="row" layout-align="center center">
+        <md-button ng-click="vote()" layout class="md-raised md-primary">Submit Vote!</md-button>
+        <md-button ng-click="viewResults()" layout class="md-raised md-primary">Results</md-button>
+    </div>
+</div>
