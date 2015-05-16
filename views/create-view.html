@@ -1,7 +1,7 @@
 <div layout-margin layout="column" layout-align="center" class="md-whiteframe-z1">
     <div layout="row" layout-align="center">
         <md-input-container style="width: 30%">
-            <label>Enter the question here.</label>
+            <label>Enter the question here</label>
             <textarea ng-model="poll.question"></textarea>
         </md-input-container>
     </div>
@@ -10,8 +10,11 @@
             <strong layout layout-align="center center">{{$index + 1}}. </strong>
             <md-input-container style="width: 30%">
                 <label>Enter poll option {{$index + 1}}</label>
-                <input ng-keydown="navigateOptions($event, $index)" ng-model="option.description" id="option{{$index}}"></input>
+                <input ng-focus="focused($index)" ng-blur="blurred($event)" ng-keydown="navigateOptions($event, $index)" ng-model="option.description" id="option{{$index}}"></input>
             </md-input-container>
+            <md-button type="button" ng-click="removeOption($index)" layout class="md-fab md-mini md-primary md-hue-2" aria-label="delete">
+                <md-icon md-svg-src="img/cross.svg"></md-icon>
+            </md-button>
         </form>
     </div>
     <div layout="row" layout-align="center center">
